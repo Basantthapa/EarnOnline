@@ -1,79 +1,157 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Make Money Online</title>
+  <meta charset="UTF-8">
+  <title>Earn Online</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
-      font-family: Arial;
-      background: #f2f2f2;
-      text-align: center;
-      padding-top: 50px;
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .box {
+    .card {
       background: white;
-      padding: 20px;
-      margin: auto;
-      width: 300px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 400px;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      text-align: center;
+      animation: fadeIn 0.6s ease;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #555;
     }
 
     button {
-      margin: 10px;
-      padding: 10px 15px;
-      font-size: 14px;
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      font-size: 15px;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .yes {
+      background: #4CAF50;
+      color: white;
+    }
+
+    .no {
+      background: #f44336;
+      color: white;
+    }
+
+    .primary {
+      background: #667eea;
+      color: white;
+    }
+
+    .secondary {
+      background: #ff9800;
+      color: white;
+    }
+
+    button:hover {
+      transform: scale(1.03);
+      opacity: 0.9;
+    }
+
+    ul {
+      text-align: left;
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 8px 0;
+      font-size: 15px;
+    }
+
+    .emoji {
+      font-size: 40px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
 <body>
 
-<div class="box" id="content">
+<div class="card" id="content">
+  <div class="emoji">💰</div>
   <h2>Do you want to make money online?</h2>
-  <button onclick="wantMoney(true)">Yes</button>
-  <button onclick="wantMoney(false)">No</button>
+  <button class="yes" onclick="wantMoney(true)">Yes, I want</button>
+  <button class="no" onclick="wantMoney(false)">No, not now</button>
 </div>
 
 <script>
 function wantMoney(answer) {
   if (answer) {
     document.getElementById("content").innerHTML = `
+      <div class="emoji">🤔</div>
       <h2>How do you want to make money?</h2>
-      <button onclick="doSomething()">Doing something online</button>
-      <button onclick="doNothing()">Without doing anything</button>
+      <button class="primary" onclick="doSomething()">Doing something online</button>
+      <button class="secondary" onclick="doNothing()">Without doing anything</button>
     `;
   } else {
     document.getElementById("content").innerHTML = `
-      <h2>Okay 😄</h2>
-      <p>No money, no problem. Enjoy your life!</p>
+      <div class="emoji">😎</div>
+      <h2>No worries!</h2>
+      <p>Enjoy your time. Jab ready ho, come back 😉</p>
     `;
   }
 }
 
 function doSomething() {
   document.getElementById("content").innerHTML = `
-    <h2>Good Choice 👍</h2>
-    <p>You can earn money by:</p>
-    <ul style="text-align:left">
-      <li>📺 YouTube</li>
-      <li>✍️ Blogging</li>
-      <li>💻 Freelancing</li>
-      <li>📱 App or Website</li>
-      <li>🎮 Gaming & Streaming</li>
+    <div class="emoji">🚀</div>
+    <h2>Great choice!</h2>
+    <p>You can earn by:</p>
+    <ul>
+      <li>📺 YouTube (Videos & Shorts)</li>
+      <li>✍️ Blogging & SEO</li>
+      <li>💻 Freelancing (Design, Coding)</li>
+      <li>📱 App / Website Development</li>
+      <li>🎮 Gaming & Live Streaming</li>
     </ul>
+    <p><strong>Start small, be consistent 💪</strong></p>
   `;
 }
 
 function doNothing() {
   document.getElementById("content").innerHTML = `
-    <h2>😂 Lazy Alert!</h2>
+    <div class="emoji">😂</div>
+    <h2>Lazy Level: Pro</h2>
     <p>You want money without doing anything?</p>
-    <p>Sleep more, dream big 💭</p>
-    <p>Money doesn’t fall from the sky 💸❌</p>
+    <p>Bro, even ATM needs electricity ⚡</p>
+    <p><strong>Dreams free ho, paisa chaina 😄</strong></p>
   `;
 }
 </script>
 
 </body>
 </html>
+
