@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Make Money Online</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f2f2f2;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    .box {
+      background: white;
+      padding: 20px;
+      margin: auto;
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 15px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box" id="content">
+  <h2>Do you want to make money online?</h2>
+  <button onclick="wantMoney(true)">Yes</button>
+  <button onclick="wantMoney(false)">No</button>
+</div>
+
+<script>
+function wantMoney(answer) {
+  if (answer) {
+    document.getElementById("content").innerHTML = `
+      <h2>How do you want to make money?</h2>
+      <button onclick="doSomething()">Doing something online</button>
+      <button onclick="doNothing()">Without doing anything</button>
+    `;
+  } else {
+    document.getElementById("content").innerHTML = `
+      <h2>Okay 😄</h2>
+      <p>No money, no problem. Enjoy your life!</p>
+    `;
+  }
+}
+
+function doSomething() {
+  document.getElementById("content").innerHTML = `
+    <h2>Good Choice 👍</h2>
+    <p>You can earn money by:</p>
+    <ul style="text-align:left">
+      <li>📺 YouTube</li>
+      <li>✍️ Blogging</li>
+      <li>💻 Freelancing</li>
+      <li>📱 App or Website</li>
+      <li>🎮 Gaming & Streaming</li>
+    </ul>
+  `;
+}
+
+function doNothing() {
+  document.getElementById("content").innerHTML = `
+    <h2>😂 Lazy Alert!</h2>
+    <p>You want money without doing anything?</p>
+    <p>Sleep more, dream big 💭</p>
+    <p>Money doesn’t fall from the sky 💸❌</p>
+  `;
+}
+</script>
+
+</body>
+</html>
