@@ -8,23 +8,22 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      min-height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      height: 100vh;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
     }
 
     .card {
-      background: white;
-      width: 90%;
-      max-width: 400px;
-      padding: 30px;
+      background: #ffffff;
+      width: 350px;
+      padding: 25px;
       border-radius: 15px;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
       text-align: center;
-      animation: fadeIn 0.6s ease;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      animation: fadeIn 0.6s ease-in-out;
     }
 
     h2 {
@@ -39,119 +38,93 @@
     button {
       width: 100%;
       padding: 12px;
-      margin: 10px 0;
-      font-size: 15px;
+      margin: 8px 0;
       border: none;
-      border-radius: 8px;
+      border-radius: 25px;
+      font-size: 15px;
       cursor: pointer;
       transition: 0.3s;
     }
 
-    .yes {
-      background: #4CAF50;
+    .btn-primary {
+      background: #4facfe;
       color: white;
     }
 
-    .no {
-      background: #f44336;
+    .btn-primary:hover {
+      background: #1e90ff;
+    }
+
+    .btn-secondary {
+      background: #ff7675;
       color: white;
     }
 
-    .primary {
-      background: #667eea;
-      color: white;
-    }
-
-    .secondary {
-      background: #ff9800;
-      color: white;
-    }
-
-    button:hover {
-      transform: scale(1.03);
-      opacity: 0.9;
+    .btn-secondary:hover {
+      background: #e55050;
     }
 
     ul {
       text-align: left;
       padding-left: 20px;
-    }
-
-    li {
-      margin: 8px 0;
-      font-size: 15px;
-    }
-
-    .emoji {
-      font-size: 40px;
+      color: #444;
     }
 
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
     }
   </style>
 </head>
 <body>
 
 <div class="card" id="content">
-  <div class="emoji">💰</div>
-  <h2>Do you want to make money online?</h2>
-  <button class="yes" onclick="wantMoney(true)">Yes, I want</button>
-  <button class="no" onclick="wantMoney(false)">No, not now</button>
+  <h2>💸 Want to Earn Money Online?</h2>
+  <p>Choose your answer</p>
+  <button class="btn-primary" onclick="step1(true)">Yes</button>
+  <button class="btn-secondary" onclick="step1(false)">No</button>
 </div>
 
 <script>
-function wantMoney(answer) {
+function step1(answer) {
   if (answer) {
-    document.getElementById("content").innerHTML = `
-      <div class="emoji">🤔</div>
-      <h2>How do you want to make money?</h2>
-      <button class="primary" onclick="doSomething()">Doing something online</button>
-      <button class="secondary" onclick="doNothing()">Without doing anything</button>
+    content.innerHTML = `
+      <h2>How do you want to earn?</h2>
+      <button class="btn-primary" onclick="doWork()">By doing something online</button>
+      <button class="btn-secondary" onclick="doNothing()">Without doing anything</button>
     `;
   } else {
-    document.getElementById("content").innerHTML = `
-      <div class="emoji">😎</div>
-      <h2>No worries!</h2>
-      <p>Enjoy your time. Jab ready ho, come back 😉</p>
+    content.innerHTML = `
+      <h2>😊 No Problem</h2>
+      <p>Enjoy life and come back anytime!</p>
     `;
   }
 }
 
-function doSomething() {
-  document.getElementById("content").innerHTML = `
-    <div class="emoji">🚀</div>
-    <h2>Great choice!</h2>
-    <p>You can earn by:</p>
+function doWork() {
+  content.innerHTML = `
+    <h2>🔥 Real Ways to Earn</h2>
     <ul>
-      <li>📺 YouTube (Videos & Shorts)</li>
-      <li>✍️ Blogging & SEO</li>
+      <li>📺 YouTube Content Creation</li>
+      <li>✍️ Blogging & Affiliate Marketing</li>
       <li>💻 Freelancing (Design, Coding)</li>
-      <li>📱 App / Website Development</li>
+      <li>📱 App & Website Development</li>
       <li>🎮 Gaming & Live Streaming</li>
     </ul>
-    <p><strong>Start small, be consistent 💪</strong></p>
   `;
 }
 
 function doNothing() {
-  document.getElementById("content").innerHTML = `
-    <div class="emoji">😂</div>
-    <h2>Lazy Level: Pro</h2>
-    <p>You want money without doing anything?</p>
-    <p>Bro, even ATM needs electricity ⚡</p>
-    <p><strong>Dreams free ho, paisa chaina 😄</strong></p>
+  content.innerHTML = `
+    <h2>😂 Lazy Mode Activated</h2>
+    <p>You want money without effort?</p>
+    <p>Even Google has to work for money 😜</p>
+    <p>Start small — dreams don’t pay bills!</p>
   `;
 }
 </script>
 
 </body>
 </html>
+
 
